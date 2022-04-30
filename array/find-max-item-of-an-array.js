@@ -4,4 +4,4 @@ let findMaxItemFromArray = (arr) => {
   return Math.max(...arr);
 };
 
-console.log(findMaxItemFromArray(arr));
+console.log(findMaxItemFromArray(arr)); // 101
