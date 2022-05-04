@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Time</title>
+  </head>
+  <body>
+    <h1 id="time"></h1>
+    <script>
+      let time = document.querySelector("#time");
+
+      setInterval(showTime, 1000);
+
+      function showTime() {
+        let date = new Date();
+        let hours = date.getHours();
+        let hour = hours % 12 < 10 ? "0" + (hours % 12) : hours % 12;
+
+        let minutes = date.getMinutes();
+        let minute = minutes < 10 ? "0" + minutes : minutes;
+
+        let seconds = date.getSeconds();
+        let second = seconds < 10 ? "0" + seconds : seconds;
+
+        if (hours % 12 === 0) {
+          time.innerHTML = `12 : ${minute} : ${second} PM`;
+        } else if (hours < 12) {
+          time.innerHTML = `${hour} : ${minute} : ${second} AM`;
+        } else if (hours > 12) {
+          time.innerHTML = `${hour} : ${minute} : ${second} PM`;
+        }
+      }
+    </script>
+  </body>
+</html>
