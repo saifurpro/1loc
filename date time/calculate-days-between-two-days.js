@@ -1,9 +1,9 @@
-let today = new Date();
+let day1 = new Date("2022-05-04");
 
-let thatDay = new Date("2022-05-03");
+let day2 = new Date("2022-05-02");
 
-function differentDays(today, thatDay) {
-  return Math.ceil(Math.abs(today - thatDay) / (1000 * 60 * 60 * 24));
+function differentDays(day1, day2) {
+  return Math.ceil(Math.abs(day1 - day2) / (1000 * 60 * 60 * 24));
 }
 
-console.log(differentDays(today, thatDay)); // 2
+console.log(differentDays(day1, day2)); // 2
